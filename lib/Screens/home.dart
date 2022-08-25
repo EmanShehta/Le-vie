@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plants_application/Screens/Product.dart';
 import 'package:plants_application/Screens/detailOfProduct.dart';
-import 'package:plants_application/Screens/login.dart';
-import 'package:plants_application/Screens/logup.dart';
-import 'package:plants_application/Screens/scanner.dart';
-import 'package:plants_application/widgets/cartPlanet.dart';
-import 'package:plants_application/widgets/cart2.dart';
 
-import 'package:qrscan/qrscan.dart';
+import 'package:plants_application/widgets/cartPlanet.dart';
 
 class home extends StatefulWidget {
   @override
@@ -161,7 +155,7 @@ class _homeState extends State<home> with SingleTickerProviderStateMixin {
               Row(
                 children: [
                   Expanded(child: cart1()),
-                  Expanded(child: cart2()),
+                  Expanded(child: cart1()),
                 ],
               ),
               Expanded(

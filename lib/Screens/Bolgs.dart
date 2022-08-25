@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plants_application/Screens/emptycart.dart';
-
-import 'CustomTextStyle.dart';
+import 'package:plants_application/widgets/CustomTextStyle.dart';
 
 class CartPage extends StatefulWidget {
   @override
@@ -14,7 +12,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Colors.transparent,
       body: Builder(
         builder: (context) {
           return ListView(
@@ -74,12 +72,7 @@ class _CartPageState extends State<CartPage> {
             padding: EdgeInsets.only(top: 12, left: 60, right: 60, bottom: 12),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20))),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => emptycart()),
-              );
-            },
+            onPressed: () {},
             child: Text(
               "Checkout",
               style: CustomTextStyle.textFormFieldSemiBold
@@ -145,10 +138,10 @@ class _CartPageState extends State<CartPage> {
                 height: 120,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(14)),
-                    // color: Color.fromRGBO(202, 204, 208, 1),
+                    color: Color.fromRGBO(202, 204, 208, 1),
                     image: DecorationImage(
-                        image: AssetImage("assets/planet.png"),
-                        fit: BoxFit.fill)),
+                        image: AssetImage("assets/pp1.png"),
+                        fit: BoxFit.cover)),
               ),
               Expanded(
                 child: Container(

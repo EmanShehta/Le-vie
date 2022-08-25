@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:plants_application/Screens/detailOfProduct.dart';
-import 'package:plants_application/Screens/emptycart.dart';
-import 'package:plants_application/Screens/scanner.dart';
-import 'package:plants_application/widgets/cartbuy.dart';
+import 'cartbuy.dart';
 
 class cart1 extends StatefulWidget {
   @override
@@ -11,7 +8,6 @@ class cart1 extends StatefulWidget {
 }
 
 class _cart1State extends State<cart1> {
-  @override
   int price = 1;
   Widget build(BuildContext context) {
     return Stack(

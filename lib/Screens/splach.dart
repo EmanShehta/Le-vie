@@ -16,7 +16,7 @@ class _splachState extends State<splach> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       body: Center(
         child: Container(
           child: Image(
@@ -31,7 +31,7 @@ class _splachState extends State<splach> {
   }
 
   void _naviagatohome() async {
-    await Future.delayed(Duration(seconds: 1), () {});
+    await Future.delayed(Duration(seconds: 3), () {});
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => profilePage()));
   }

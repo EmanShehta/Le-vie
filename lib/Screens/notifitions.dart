@@ -1,124 +1,302 @@
 import 'package:flutter/material.dart';
-import 'package:stacked_notification_cards/stacked_notification_cards.dart';
 
-class notify extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<notify> {
-  List<NotificationCard> _listOfNotification = [
-    NotificationCard(
-      date: DateTime.now(),
-      leading: Icon(
-        Icons.account_circle,
-        size: 48,
-      ),
-      title: 'OakTree 1',
-      subtitle: 'We believe in the power of mobile computing.',
-    ),
-    NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 4),
-      ),
-      leading: Icon(
-        Icons.account_circle,
-        size: 48,
-      ),
-      title: 'OakTree 2',
-      subtitle: 'We believe in the power of mobile computing.',
-    ),
-    NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 10),
-      ),
-      leading: Icon(
-        Icons.account_circle,
-        size: 48,
-      ),
-      title: 'OakTree 3',
-      subtitle: 'We believe in the power of mobile computing.',
-    ),
-    NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 30),
-      ),
-      leading: Icon(
-        Icons.account_circle,
-        size: 48,
-      ),
-      title: 'OakTree 4',
-      subtitle: 'We believe in the power of mobile computing.',
-    ),
-    NotificationCard(
-      date: DateTime.now().subtract(
-        const Duration(minutes: 44),
-      ),
-      leading: Icon(
-        Icons.account_circle,
-        size: 48,
-      ),
-      title: 'OakTree 5',
-      subtitle: 'We believe in the power of mobile computing.',
-    ),
-  ];
-
+class notify extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(
-          'Notifications',
-        ),
-      ),
-      body: SingleChildScrollView(
+      backgroundColor: Colors.transparent,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 40),
         child: Column(
           children: [
-            StackedNotificationCards(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
-                  blurRadius: 2.0,
-                )
+            Center(
+              child: Text(
+                'Notification',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/iconnotify.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Joy Arnold left 6 comments on Your Post',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15),
+                ),
               ],
-              notificationCardTitle: 'Message',
-              notificationCards: [..._listOfNotification],
-              cardColor: Color(0xFFF1F1F1),
-              padding: 16,
-              actionTitle: Text(
-                'Notifications',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                right: 100,
               ),
-              showLessAction: Text(
-                'Show less',
+              child: Text(
+                'Yesterday at 11:42 PM',
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
-                ),
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15),
               ),
-              onTapClearAll: () {
-                setState(() {
-                  _listOfNotification.clear();
-                });
-              },
-              clearAllNotificationsAction: Icon(Icons.close),
-              clearAllStacked: Text('Clear All'),
-              cardClearButton: Text('clear'),
-              cardViewButton: Text('view'),
-              onTapClearCallback: (index) {
-                print(index);
-                setState(() {
-                  _listOfNotification.removeAt(index);
-                });
-              },
-              onTapViewCallback: (index) {
-                print(index);
-              },
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Image.asset("assets/line.png"),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/iconnotify2.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  //  padding: const EdgeInsets.only(right: 30),
+                  child: Text(
+                    'Dennis Nedry commented on Isla Nublar SOC2 compliance report ',
+                    maxLines: 3,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/rect.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  //  padding: const EdgeInsets.only(right: 30),
+                  child: Text(
+                    '“ leaves are an integral part of the stem system.    They are attached by a continuous vascular system to the rest of the plant so that free exchange of nutrients.”',
+                    maxLines: 3,
+                    style: TextStyle(
+                        height: 1.7,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                right: 100,
+              ),
+              child: Text(
+                'Yesterday at 11:42 PM',
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Image.asset("assets/line.png"),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/iconnotify3.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  //  padding: const EdgeInsets.only(right: 30),
+                  child: Text(
+                    'John Hammond created Isla Nublar SOC2 compliance report  ',
+                    maxLines: 3,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Image.asset("assets/line.png"),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/iconnotify.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Joy Arnold left 6 comments on Your Post',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                right: 100,
+              ),
+              child: Text(
+                'Yesterday at 11:42 PM',
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Image.asset("assets/line.png"),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/iconnotify2.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  //  padding: const EdgeInsets.only(right: 30),
+                  child: Text(
+                    'Dennis Nedry commented on Isla Nublar SOC2 compliance report ',
+                    maxLines: 3,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/rect.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  //  padding: const EdgeInsets.only(right: 30),
+                  child: Text(
+                    '“ leaves are an integral part of the stem system.    They are attached by a continuous vascular system to the rest of the plant so that free exchange of nutrients.”',
+                    maxLines: 3,
+                    style: TextStyle(
+                        height: 1.7,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                right: 100,
+              ),
+              child: Text(
+                'Yesterday at 11:42 PM',
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Image.asset("assets/line.png"),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                    top: 10,
+                  ),
+                  child: Image.asset("assets/iconnotify3.png"),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  //  padding: const EdgeInsets.only(right: 30),
+                  child: Text(
+                    'John Hammond created Isla Nublar SOC2 compliance report  ',
+                    maxLines: 3,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

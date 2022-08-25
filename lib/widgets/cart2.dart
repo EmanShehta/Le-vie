@@ -6,7 +6,6 @@ class cart2 extends StatefulWidget {
 }
 
 class _cart2State extends State<cart2> {
-  @override
   int price = 1;
   Widget build(BuildContext context) {
     return Stack(

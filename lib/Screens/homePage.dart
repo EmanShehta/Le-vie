@@ -51,10 +51,10 @@ class _HomeState extends State<Home> {
     Widget widget = home();
     switch (index) {
       case 0:
-        widget = plants();
+        widget = Plants();
         break;
       case 1:
-      ////  widget = scan();
+        widget = scan();
         break;
       case 2:
         widget = home();

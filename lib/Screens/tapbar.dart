@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plants_application/Screens/logup.dart';
-import 'package:plants_application/widgets/buttonStyle.dart';
-import 'package:plants_application/widgets/textfilled.dart';
 
 import 'login.dart';
 

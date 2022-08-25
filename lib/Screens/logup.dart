@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:plants_application/Screens/homePage.dart';
 import 'package:plants_application/widgets/buttonStyle.dart';
 
 import 'login.dart';
 
+// ignore: must_be_immutable
 class logup extends StatelessWidget {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
